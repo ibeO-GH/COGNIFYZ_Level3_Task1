@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --sub-color: #091b29;
+  --main-color: #132939;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-image: linear-gradient(120deg, #0e4168, #073050);
+}
+
+section {
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.gallery-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: var(--sub-color);
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px, rgba(0, 0, 0, 0.3) 0 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0 -3px 0 inset;
+  padding: 50px 0;
+  max-width: 700px;
+  width: 100%;
+  margin: 40px auto;
+}
+
+.gallery-container h1 {
+  color: #ccc;
+  text-transform: uppercase;
+  font-size: 4vw;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  margin-bottom: 2rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  max-width: 80%;
+  /* margin: 20px auto; */
+}
+
+.image-box {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+.modal img {
+  width: 80%;
+  max-width: 500px;
+  margin: 10% auto;
+}
+.modal:target {
+  display: flex;
+}
+
+.close {
+  color: white;
+  text-decoration: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 4rem;
+}
+
+.image-slideshow h1 {
+  color: #ccc;
+  text-transform: uppercase;
+  font-size: 3.5vw;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.slideshow-container {
+  position: relative;
+  width: 80%;
+  max-width: 700px;
+  height: 400px;
+  overflow: hidden;
+  border: 10px solid var(--sub-color);
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px, rgba(0, 0, 0, 0.3) 0 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0 -3px 0 inset;
+  margin: 40px auto;
+}
+
+.slides {
+  display: flex;
+  width: 1000%;
+  height: 100%;
+  animation: slideAnimation 30s infinite linear;
+}
+
+.slides img {
+  width: 10%;
+  height: 100%;
+  object-fit: cover;
+}
+@keyframes slideAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  10% {
+    transform: translateX(-10%);
+  }
+  20% {
+    transform: translateX(-20%);
+  }
+  30% {
+    transform: translateX(-30%);
+  }
+  40% {
+    transform: translateX(-40%);
+  }
+  50% {
+    transform: translateX(-50%);
+  }
+  60% {
+    transform: translateX(-60%);
+  }
+  70% {
+    transform: translateX(-70%);
+  }
+  80% {
+    transform: translateX(-80%);
+  }
+  90% {
+    transform: translateX(-90%);
+  }
+  100% {
+    transform: translateX(0); /* Loops back to the first slide */
+  }
+}
